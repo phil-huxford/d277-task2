@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Contact Us</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <script>
+        function checkEmailMatch() {
+            var email = document.getElementById('email').value;
+            var email2 = document.getElementById('email2').value;
+        
+            if (email === email2) {
+                document.getElementById('email2Error').innerHTML = '';
+                return true;
+            } else {
+                document.getElementById('email2Error').innerHTML = 'Emails do not match';
+                return false;
+            }
+        }
+        </script>
+    <body>
+        <div class="background">
+            <div class="navbar">
+                <a href="JavaScript: location.reload(true)"><img src="flag_logo.png" alt="Flag of Iowa in the shape of Iowa" class="logo" href></a>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="des_moines.html">Des Moines</a></li>
+                    <li><a href="iowa_city.html">Iowa City</a></li>
+                    <li><a href="davenport.html">Davenport</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="content">
+                <img src="email.jpg" id="contact_image" alt="Putting an email in an envelope.">
+                <header>
+                    <h1>Contact Us!</h1>
+                </header>
+            <section>
+                <ol>
+                    <li>1. Fill out the contact form below</li>
+                    <li>2. Wait 2-3 business days</li>
+                    <li>3. A representative will contact you</li>
+                </ol>         
+            </section>
+                <form id="contact_form" onsubmit="return checkEmailMatch()">
+                    <h1>Contact Us</h1>
+                    <input type="text" id="first_name" name="first_name" placeholder="First Name" required>
+                    <input type="text" id="last_name" name="last_name" placeholder="Last Name" required>
+                    <input type="email" id="email" name="email" placeholder="Email Address" required>
+                    <input type="email" id="email2" name="email2" placeholder="Verify Eamil Address" required>
+                    <span id="email2Error" style="color: red;"></span>
+                    <textarea id="message" name="message" rows="4" cols="50" placeholder="Enter your message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            <aside id="external_link">
+                Get travel tips at <a href="https://www.traveliowa.com/" target="_blank">TravelIowa.com</a>
+            </aside>
+            </div>
+        </div>
+    </body>
+</html>
